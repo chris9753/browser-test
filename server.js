@@ -19,7 +19,6 @@ users[req.body.number] = req.body.coords;
 res.send('success');
 });
 app.get('/retrieve', function(req, res) {
-
     res.json(users[req.query.number]);
 })
 
