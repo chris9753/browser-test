@@ -12,7 +12,7 @@ const users = {
 
 // sendFile will go here
 app.get('/', function(req, res) {
-  res.sendFile(path.join(__dirname, '/index_goodluck.html'));
+  res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 app.post('/verify', function(req, res) {
