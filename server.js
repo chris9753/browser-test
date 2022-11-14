@@ -18,9 +18,9 @@ app.post('/verify', function(req, res) {
 users[req.body.number] = req.body.coords;
 res.send('success');
 });
-app.get('/retrieve/:number', function(req, res) {
+app.get('/retrieve', function(req, res) {
 
-    res.send(users[req.params.number]);
+    res.json(users[req.query.number]);
 })
 
 app.listen(port);
