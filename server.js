@@ -5,6 +5,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 const port = process.env.PORT || 3434;
+const domain = process.env.DOMAIN || 'localhost';
 const users = {
 
 }
@@ -23,4 +24,4 @@ app.get('/retrieve', function(req, res) {
 })
 
 app.listen(port);
-console.log('Server started at http://localhost:' + port);
+console.log("Server started at," + domain + ":"+ port);
