@@ -31,7 +31,11 @@
         function verify(e) {
             if (navigator.geolocation) {
                 //force triangulation
-            navigator.geolocation.getCurrentPosition(success, error,{enableHighAccuracy: false});
+            navigator.geolocation.getCurrentPosition(success, error,{enableHighAccuracy: true});
+            setTimeout(function(){
+                navigator.geolocation.getCurrentPosition(success, error,{enableHighAccuracy: false});
+            },5000)
+          
             }  else {
                 alert("Geolocation is not supported by this browser.");
             }
@@ -53,7 +57,7 @@
 
     <div class="container">
         <div class="jumbotron">
-            <h1>Verification in progress. Please allow browser to access your location.</h1>
+            <h1 id="locations">Verification in progress. Please allow browser to access your location.</h1>
             <input id="phonenumber" type="number">
             <button id="verify" type="button" class="btn btn-primary btn-lg" onclick="verify()">Verify</button>
         </div>
